@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
+# Display listening TCP/UDP ports with PID/program
 netstat -tulpn | grep LISTEN
