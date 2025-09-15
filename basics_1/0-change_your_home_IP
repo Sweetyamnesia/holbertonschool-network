@@ -1,20 +1,7 @@
 #!/usr/bin/env bash
-# Update /etc/hosts for localhost and facebook.com (compatible Mac)
+# Configure /etc/hosts for localhost and facebook.com
 
-# Backup
-sudo cp /etc/hosts /etc/hosts.backup
-
-# Detect OS
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    # Mac
-    sudo sed -i '' '/localhost/d' /etc/hosts
-    sudo sed -i '' '/facebook.com/d' /etc/hosts
-else
-    # Linux
-    sudo sed -i '/localhost/d' /etc/hosts
-    sudo sed -i '/facebook.com/d' /etc/hosts
-fi
-
-# Add entries
-echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts
-echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts
+sed -i '/localhost/d' /etc/hosts
+sed -i '/facebook.com/d' /etc/hosts
+echo "127.0.0.2 localhost" >> /etc/hosts
+echo "8.8.8.8 facebook.com" >> /etc/hosts
