@@ -1,13 +1,4 @@
 #!/usr/bin/env bash
-# Display all active IPv4 addresses on Linux or Mac
+# Display all active IPv4 addresses on the machine
 
-if command -v ip >/dev/null 2>&1; then
-    # Linux
-    ip addr show | awk '/inet / {print $2}' | cut -d/ -f1
-elif command -v ifconfig >/dev/null 2>&1; then
-    # Mac or older Linux
-    ifconfig | awk '/inet / && $2 != "127.0.0.1" {print $2}'
-else
-    echo "Neither ip nor ifconfig found"
-    exit 1
-fi
+ip -4 addr show | awk '/inet / {print $2}' | cut -d/ -f1
