@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-# Configure /etc/hosts for localhost and facebook.com
+#This script configures the server's IP resolution for localhost and facebook.com
+#Backup the original /etc/hosts file (safety first!)
+sudo cp /etc/hosts /etc/hosts.backup
 
-sed -i '/localhost/d' /etc/hosts
-sed -i '/facebook.com/d' /etc/hosts
-echo "127.0.0.2 localhost" >> /etc/hosts
-echo "8.8.8.8 facebook.com" >> /etc/hosts
+#Update localhost to point to 127.0.0.2
+sudo sed -i '/localhost/d' /etc/hosts echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts
+
+#Update facebook.com to point to 8.8.8.8 (just for this exercise!)
+sudo sed -i '/facebook.com/d' /etc/hosts echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts
