@@ -1,0 +1,73 @@
+🌐 What Happens When You Type https://www.google.com in Your Browser?
+
+Ever wondered what happens behind the scenes the moment you type a URL and press Enter? Modern web applications rely on a complex stack of technologies to deliver content quickly, securely, and reliably. Let’s break down the journey of a request to https://www.google.com.
+
+
+
+1️⃣ DNS Request
+
+ Your browser asks a DNS server to translate www.google.com into an IP address. Think of DNS as the phonebook of the internet — your computer needs the server’s “number” to connect.
+
+
+
+2️⃣ TCP/IP Connection
+
+ Once the IP is known, your browser establishes a TCP connection. TCP ensures that data packets are delivered reliably and in order. This involves a “three-way handshake” between your device and the server.
+
+
+
+3️⃣ Firewall Checks
+
+ Your request passes through firewalls, which inspect incoming and outgoing traffic to prevent unauthorized access and protect both your device and the server.
+
+
+
+4️⃣ HTTPS/SSL Encryption
+
+ Because the URL starts with HTTPS, the browser performs an SSL/TLS handshake with the server. This:
+
+Verifies the server’s identity
+
+Encrypts the data, keeping sensitive information private
+
+
+
+5️⃣ Load Balancer
+
+ At Google’s massive data centers, a load balancer distributes incoming requests across multiple servers. It ensures:
+
+No single server is overloaded
+
+Traffic is rerouted if a server fails
+
+
+
+6️⃣ Web Server
+
+ The web server handles static content like images, CSS, and JavaScript. For dynamic requests, it forwards them to the application server.
+
+
+
+7️⃣ Application Server
+
+ The application server executes business logic. For example, it handles your search queries and prepares the data to be displayed.
+
+
+
+8️⃣ Database
+
+ The application server communicates with the database to fetch or store data. In Google’s case, this means querying the search index to return relevant results.
+
+
+
+9️⃣ Response Back to the Browser
+
+ Finally, the response travels back through the load balancer → HTTPS → firewall → browser, where the page is rendered for you to see.
+
+
+
+💡 Key Takeaway:
+
+ From a single URL to a fully rendered page, dozens of components work seamlessly together. Understanding this workflow — DNS, TCP/IP, firewall, HTTPS, load balancer, web server, application server, database — is essential for software engineers, front-end developers, and site reliability engineers alike.
+
+ ![What happens](what_happens_when_your_type_google_com_in_your_browser_and_press_enter/what-happens.png)
